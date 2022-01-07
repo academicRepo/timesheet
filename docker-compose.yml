@@ -3,7 +3,6 @@ services:
   timesheet:
     build: .      
     image: timesheet:latest
-    container_name: timesheet
     ports:
       - 8090:8090
     depends_on:
@@ -11,7 +10,6 @@ services:
         condition: service_healthy  
   db_timesheet:
     image: "mysql:5.7"
-    container_name: db-timesheet
     restart: always
     ports:
       - 3306:3306
